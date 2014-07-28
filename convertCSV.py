@@ -1,5 +1,9 @@
 """convert CSV to JSON  - of a table made up of continents->regions->countries
-Kamile Matulenaite 28.07.14"""
+Kamile Matulenaite 28.07.14
+
+ps you could add mentions of these countries on twitter in real-time :-))
+
+"""
 
 import json
 
@@ -28,10 +32,13 @@ def convert(f):
         
         if (currentLine[0] == "Africa" or currentLine[0] == "Asia" or currentLine[0] == "Europe" or currentLine[0] == "Latin America and Caribbean" or currentLine[0] == "Northern America" or currentLine[0] == "Oceania"):
              if (Regions != {}): #Continents holds Regions which holds countries
-                
+                 if continent =="":
+                     continent = currentLine[0]
+                     
                  continentsObj["name"] = continent
                  continentsObj["children"] = Regions
                  Continents.append(continentsObj)
+                 #print(Continents)
                  
                  continentsObj = {}
                  
@@ -45,6 +52,9 @@ def convert(f):
 
 
                  print(currentLine[0])
+
+                 if region =="":
+                     region = currentLine[0]
                  
                  regionObj["name"] = region
                  regionObj["children"] = Countries
@@ -74,6 +84,7 @@ def convert(f):
     
     result["name"] = "flare"
     result["children"] = Continents
+    print(result)
     
     return json.dumps(result)
     
@@ -81,12 +92,17 @@ def convert(f):
 
 #print("yahoo")   
 f = open("populationByContinent.csv","r")
+
 contents = f.read()
+f.close()
 
+data = convert(contents)
 
-json = convert(contents)
+f = open("flare.json","w")
+f.write(data)
+f.close()
 
-print(json)
+#print(json)
     
 
 
