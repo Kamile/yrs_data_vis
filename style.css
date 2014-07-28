@@ -1,0 +1,19 @@
+/* style sheet for web page */
+body{
+    background: white;
+}
+.node :hover{
+    opacity:0.8;
+
+}
+header{
+    background:white;
+    text-align:center;
+    display:block;
+    color:#00abef;
+}
+
+header:hover{
+   color:#0000ab;
+    
+}

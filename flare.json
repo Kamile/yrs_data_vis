@@ -1,0 +1,98 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "continents",
+   "children": [
+    {
+     "name": "USA",
+     "children": [
+      {"name": "United States", "size": 39000}
+     ]
+    },
+    {
+     "name": "Canada",
+     "children": [
+      {"name": "Canada", "size": 22000}
+     ]
+    },
+    {
+     "name": "Europe",
+     "children": [
+      {"name": "Iceland", "size": 42000},
+      {"name": "Ireland", "size": 42000},
+      {"name": "Netherlands", "size": 40000},
+      {"name": "Switzerland", "size": 38000},
+      {"name": "United Kingdom", "size": 38000},
+      {"name": "Belgium", "size": 37000},
+      {"name": "Denmark", "size": 36000},
+      {"name": "Austria", "size": 30000},
+      {"name": "Iceland", "size": 29000},
+      {"name": "France", "size": 23000},
+      {"name": "Lithuania", "size": 4000},
+      {"name": "Russia", "size":6000},
+      {"name": "Latvia", "size":3000},
+      {"name": "Moldova", "size":4000},
+      {"name": "Slovakia", "size":4000},
+      {"name": "Estonia", "size":4000},
+      {"name": "Belarus", "size":5000},
+      {"name": "Ukraine", "size":5000},
+      {"name": "Armenia", "size":6000},
+      {"name": "Romania", "size":6000},
+      {"name": "Bulgaria", "size":7000},
+      {"name": "Croatia", "size":8000},
+      {"name": "Georgia", "size":11000},
+      {"name": "Slovenia", "size":11000},
+      {"name": "Hungary", "size":11000},
+      {"name": "Portugal", "size":13000},
+      {"name": "Italy", "size":13000},
+      {"name": "Poland", "size":14000}
+     ]
+    },
+    {
+     "name": "South America",
+     "children": [
+      {"name": "Venezuela", "size": 55000},
+      {"name": "Dominican Republic", "size": 32000},
+      {"name": "Mexico", "size": 31000},
+      {"name": "Chile", "size": 30000},
+      {"name": "Argentina", "size": 27000},
+      {"name": "Brazil", "size": 22000},
+      {"name": "Uruguay", "size": 21000}
+     ]
+    },
+    {
+     "name": "Africa",
+     "children": [
+      {"name": "Nigeria", "size": 45000},
+      {"name": "Ghana", "size": 26000}
+     ]
+    },
+    {
+     "name": "Asia",
+     "children": [
+      {"name": "Philippines", "size": 40000},
+      {"name": "China", "size": 25000},
+      {"name": "Japan", "size": 23000}
+     ]
+    }
+   ]
+  },
+  {
+     "name": "Middle East",
+     "children": [
+      {"name": "Turkey", "size": 39000},
+      {"name": "India", "size": 23000},
+      {"name": "Bangladesh", "size": 18000},
+      {"name": "Azerbaijan", "size": 8000}
+      
+     ]
+    },
+  {
+   "name": "Australia",
+   "children": [
+    {"name": "Australia", "size": 39000}
+   ]
+  }
+ ]
+}
