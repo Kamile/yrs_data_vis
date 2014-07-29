@@ -13,26 +13,24 @@ text {
 <body>
 
 <header id="header">
-    <div>
-        <h1>World Population.</h1>
-    </div>
+    <h1>World Population.</h1>
 </header>
 
 <script type="text/javascript" src="d3.v3.min.js"></script>
 <script>
 
-var diameter = 1400,
+var diameter = 1500,
     format = d3.format(",d"),
-    color = d3.scale.category20c();
+    color = d3.scale.category20b();
 
 var bubble = d3.layout.pack()
     .sort(null)
     .size([diameter, diameter])
-    .padding(1.5);
+    .padding(0.5);
 
 var svg = d3.select("body").append("svg")
     .attr("width", diameter)
-    .attr("height", diameter)
+    .attr("height", diameter+1500)
     .attr("class", "bubble");
 
 d3.json("flare.json", function(error, root) {
@@ -52,11 +50,12 @@ d3.json("flare.json", function(error, root) {
       .style("fill", function(d) { return color(d.packageName); });
 
   node.append("text")
+      .attr("textLength",function(d){return d.r})
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
-      .style("font-size", function(d){return (((d.r-30)/10)+8)+"px"})
+      .style("font-size", function(d){return (((d.r-50)/10)+8)+"px"})
       .style("font-weight","bold")
-      .text(function(d) { return d.className.substring(0, d.r / 3); });
+      .text(function(d) { return d.className; });
 });
 
 // Returns a flattened hierarchy containing all leaf nodes under the root.

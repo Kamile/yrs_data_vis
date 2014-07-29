@@ -1,6 +1,5 @@
 name,size
 Africa,1110635062
-Eastern Africa,373202469
 Burundi,10162532
 Comoros,734917
 Djibouti,872932
@@ -21,7 +20,6 @@ Uganda,37578876
 United Republic of Tanzania,49253126
 Zambia,14538640
 Zimbabwe,14149648
-Central Africa,135750335
 Angola,21471618
 Cameroon,22253959
 Central African Republic,4616417
@@ -31,7 +29,6 @@ DR Congo,67513677
 Equatorial Guinea,757014
 Gabon,1671711
 Sao Tome and Principe,192993
-Northern Africa,210002379
 Algeria,39208194
 Egypt,82056378
 Libya,6201521
@@ -39,13 +36,11 @@ Morocco,33008150
 Sudan,37964306
 Tunisia,10996515
 Western Sahara,567315
-Southern Africa,60424568
 Botswana,2021144
 Lesotho,2074465
 Namibia,2303315
 South Africa,52776130
 Swaziland,1249514
-Western Africa,331255311
 Benin,10323474
 Burkina Faso,16934839
 Cape Verde,498897
@@ -64,14 +59,12 @@ Senegal,14133280
 Sierra Leone,6092075
 Togo,6816982
 Asia,4298723288
-Eastern Asia,1620807348
 China,1385566537
 Japan,127143577
 North Korea,24895480
 South Korea,49262698
 Mongolia,2839073
 Taiwan,23329772
-South-Central Asia,1813415791
 Afghanistan,30551674
 Bangladesh,156594962
 Bhutan,753947
@@ -86,7 +79,6 @@ Sri Lanka,21273228
 Tajikistan,8207834
 Turkmenistan,5240072
 Uzbekistan,28934102
-South-Eastern Asia,618792719
 Brunei Darussalam,417784
 Cambodia,15135169
 Indonesia,249865631
@@ -98,7 +90,6 @@ Singapore,5411737
 Thailand,67010502
 Timor-Leste,1132879
 Viet Nam,91679733
-Western Asia,245707430
 Armenia,2976566
 Azerbaijan,9413420
 Bahrain,1332171
@@ -118,7 +109,6 @@ Turkey,74932641
 United Arab Emirates,9346129
 Yemen,24407381
 Europe,742452170
-Eastern Europe,294161900
 Belarus,9356678
 Bulgaria,7222943
 Czech Republic,10702197
@@ -129,7 +119,6 @@ Romania,21698585
 Russian Federation,142833689
 Slovakia,5450223
 Ukraine,45238805
-Northern Europe,100404044
 Channel Islands,162018
 Denmark,5619096
 Estonia,1287251
@@ -143,7 +132,6 @@ Lithuania,3016933
 Norway,5042671
 Sweden,9571105
 United Kingdom,63136265
-Southern Europe,155826501
 Albania,3173271
 Andorra,79218
 Bosnia and Herzegovina,3829307
@@ -160,7 +148,6 @@ San Marino,31448
 Serbia,9510506
 Slovenia,2071997
 Spain,46926963
-Western Europe,192059725
 Austria,8495145
 Belgium,11104476
 France,64291280
@@ -170,7 +157,6 @@ Luxembourg,530380
 Monaco,37831
 Netherlands,16759229
 Switzerland,8077833
-Latin America and Caribbean,616644503
 Caribbean,42517356
 Anguilla,14300
 Antigua and Barbuda,89985
@@ -198,7 +184,6 @@ Saint Vincent and the Grenadines,109373
 Trinidad and Tobago,1341151
 Turks and Caicos Islands,33098
 United States Virgin Islands,106627
-Central America,167387458
 Belize,331900
 Costa Rica,4872166
 El Salvador,6340454
@@ -207,7 +192,6 @@ Honduras,8097688
 Mexico,122332399
 Nicaragua,6080478
 Panama,3864170
-South America,406739689
 Argentina,41446246
 Bolivia,10671200
 Brazil,200361925
@@ -229,16 +213,13 @@ Greenland,56987
 Saint Pierre and Miquelon,6043
 United States of America,320050716
 Oceania,38303620
-Australia/New Zealand,27848314
 Australia,23342553
 New Zealand,4505761
-Melanesia,9272817
 Fiji,881065
 New Caledonia,256496
 Papua New Guinea,7321262
 Solomon Islands,561231
 Vanuatu,252763
-Micronesia,508482
 Guam,165124
 Kiribati,102351
 Marshall Islands,52634
@@ -246,7 +227,6 @@ Micronesia,103549
 Nauru,10051
 Northern Mariana Islands,53855
 Palau,20918
-Polynesia,674007
 American Samoa,55165
 Cook Islands,20629
 French Polynesia,276831
