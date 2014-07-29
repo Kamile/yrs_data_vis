@@ -27,26 +27,37 @@ def convert(f):
         
         currentLine = line.split(",")
         
-        if (currentLine[0] == "Africa" or currentLine[0] == "Asia" or currentLine[0] == "Europe" or currentLine[0] == "Latin America and Caribbean" or currentLine[0] == "Northern America" or currentLine[0] == "Oceania"):
-             if (Countries != {}): #Continents holds Regions which holds countries
+        if (currentLine[0] == "Africa" or currentLine[0] == "Asia" or currentLine[0] == "Europe" or currentLine[0] == "Latin America and the Caribbean" or currentLine[0] == "Northern America" or currentLine[0] == "Oceania"):
+             if currentLine[0] != "Africa":
+                 print(currentLine[0])
+                 continentsObj["name"] = continent
+                 continentsObj["children"] = Countries
+                 Continents.append(continentsObj)
+                 continentsObj = {}
+                 Countries = []
+
+
+
+             """if (Countries != {}): #the first line is a continent and so countries is empty
                  if continent =="":
                      continent = currentLine[0]
                      
                  continentsObj["name"] = continent
                  continentsObj["children"] = Countries
+
+                
                  Continents.append(continentsObj)
 
+                 continentsObj = {}"""
                  
-                 continentsObj = {}
-                 
-            
-            
              continent = currentLine[0]
         
         else:
             country["name"] = currentLine[0]
             country["size"] = int(currentLine[1])
+
             Countries.append(country)
+            #print(country)
 
             if currentLine[0] == "Wallis and Futuna Islands":
 
@@ -60,6 +71,7 @@ def convert(f):
     
     
     result["name"] = "flare"
+    #print(Continents)
     result["children"] = Continents
     #print(result)
     
@@ -75,7 +87,7 @@ f.close()
 
 data = convert(contents)
 
-f = open("flare2.json","w")
+f = open("flare.json","w")
 f.write(data)
 f.close()
 

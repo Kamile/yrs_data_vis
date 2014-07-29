@@ -18,19 +18,46 @@ text {
 
 <script type="text/javascript" src="d3.v3.min.js"></script>
 <script>
+      
+   function colours(continent){
+      
+      if (continent == "Africa") {
+        return "rgb(209,198,37)";
+      }
+      else if (continent =="Asia") {
+        return "rgb(195,219,121)";
+      }
+      else if (continent == "Europe") {
+        return "rgb(116,176,178)";
+      }
+      else if (continent == "Latin America and Caribbean") {
+        return "rgb(249,255,139)";
+      }
+      else if (continent =="Northern America") {
+        return "rgb(220,189,177)";
+      }
+      else {
+        return "rgb(242,223,202)";
+      };
+  
+  }; 
+    
 
-var diameter = 1500,
+var diameter = 1400,
     format = d3.format(",d"),
-    color = d3.scale.category20b();
+    data = d3.range(0,20),
+    color = d3.scale.category10();
+    //color = colours("Asia");
+    
 
 var bubble = d3.layout.pack()
     .sort(null)
     .size([diameter, diameter])
-    .padding(0.5);
+    .padding(5.5);
 
 var svg = d3.select("body").append("svg")
     .attr("width", diameter)
-    .attr("height", diameter+1500)
+    .attr("height", diameter+200)
     .attr("class", "bubble");
 
 d3.json("flare.json", function(error, root) {
@@ -43,11 +70,12 @@ d3.json("flare.json", function(error, root) {
 
   node.append("title")
       .text(function(d) { return d.className + ": " + format(d.value/1)
-      +"\nThis country/region is a part of "+ d.packageName; });
+      +"\nThis country is a part of "+ d.packageName; });
 
   node.append("circle")
+      
       .attr("r", function(d) { return d.r; })
-      .style("fill", function(d) { return color(d.packageName); });
+      .style("fill",  function(d){return color(d.packageName);});
 
   node.append("text")
       .attr("textLength",function(d){return d.r})
@@ -66,6 +94,8 @@ function classes(root) {
     if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
     else classes.push({packageName: name, className: node.name, value: node.size});
   }
+    
+  
 
   recurse(null, root);
   return {children: classes};
