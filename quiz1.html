@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script type="text/javascript"> 
+            
+            var populationByCountry = [
+                ["India", 1250000000],
+                ["Bermuda",65300],
+                ["Lithuania",3020000],
+                ["Micronesia",104000],
+                ["Togo",6820000],
+				["Malawi",16400000],
+				["Thailand",67000000],
+				["USA",320000000],
+				["Australia",23300000],
+				["Holy See",799],
+				["Faroe Islands",49500],
+				["United Kingdom",63100000]
+				
+            ];
+            
+            var buttonsIDs = ["one","two","three","four","five","six"];
+			
+			var answerPlace = Math.floor(Math.random()*6);
+			var answerID = buttonsIDs[answerPlace];
+			
+			var questionNumber = Math.floor(Math.random()*12); //random number between 1 and 15
+			
+            
+            function extraAnswers(i){ //where i is the button id
+                var population = populationByCountry[questionNumber][1];
+                
+                
+                var answer = Math.floor(Math.random()*(population*1.2)+(population*0.8));
+				answer = Number(answer.toPrecision(3));
+				answer.toLocaleString();
+				
+				population = Number(population.toPrecision(3));
+				population.toLocaleString();
+				
+                if (i==answerID){
+                    document.getElementById(i).value = population;
+                }
+                else if (answer != population){
+                    document.getElementById(i).value = answer;                
+                }
+                else {
+                    extraAnswers(i);   //call the function again so not same as answer
+                };
+            
+            };
+            
+            
+            function load(){
+				
+				
+				document.getElementById("question").innerHTML = "What is the population of "+ populationByCountry[questionNumber][0] +"?";
+				
+                for(var i=0;i<6;i++){
+                    extraAnswers(buttonsIDs[i]);
+                };        
+            };
+			
+			function answer(n){ //n is for button number
+				if (n!=answerPlace){
+					alert("The correct answer was " + populationByCountry[questionNumber][1] + " for " + populationByCountry[questionNumber][0]);
+				} 
+				else{
+					alert("Woop! That was correct!!!");
+				};
+			};
+            
+            
+            
+            
+
+        </script>
+		<title>Quiz</title>
+
+    </head>
+    <body onload="load()">
+        <h1 id="question"></h1>
+        <div id="answers">
+        <table>
+            <tr>
+                <td>
+                    <a href= "quiz1.html"> <input type= "button" id="one" onclick="answer(0)"> </input></a><br/>
+                    <a href= "quiz1.html"> <input type= "button" id="two" onclick="answer(1)"> </input></a><br/>
+                    <a href= "quiz1.html"><input type= "button"  id="three" onclick="answer(2)"> </input></a> 
+                </td>
+                <td>
+                    <a href= "quiz1.html"><input type= "button" id="four" onclick="answer(3)"> </input></a><br/>
+                    <a href= "quiz1.html"><input type= "button" id="five" onclick="answer(4)"> </input></a><br/>
+                    <a href= "quiz1.html"><input type= "button" id="six" onclick="answer(5)"> </input></a>
+                </td>
+            </tr>
+        </table>
+        </div>
+		<br/>
+		<a href="success.html"><div id="success">Ok, I'm good now!</div></a>
+    </body>
+</html>

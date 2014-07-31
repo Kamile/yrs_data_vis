@@ -12,6 +12,8 @@ h1{
     text-align:center;
     display:block;
     color:#00abef;
+    font-family:arial;
+	letter-spacing:12px;
 }
 
 h1:hover{
@@ -23,26 +25,29 @@ h3{
     color:#0947ef;
     text-align:center;
     display:block;
+    font-family:arial;
+	letter-spacing:5px;
 
 }
 
 input{
     text-align:center;
-    font-size:20px;
+    font-size:18px;
     border: dashed;
     border-color:#3df082;
     border-width:4px;
     padding: 15px;
     border-radius:10%;
     background-color:white;
-    width:50%;
+    width:200px;
     height:50px;
     margin-right:15px;
     margin-bottom:25px;
     
+    
 }
 
-div{
+#link{
     text-align: center;
     font-size: 30px;
     width:100%;
@@ -53,6 +58,8 @@ div{
     padding: 30px;
     margin-top:20px;
     border-radius:10%;
+    font-family:arial;
+	letter-spacing:5px;
 }
 a{
     text-decoration:none;
@@ -65,4 +72,50 @@ a{
 
 .bubble {
     margin-top:-200px;
+}
+
+#answers{
+    position:relative;
+    left:35%;
+    top:20%;  
+}
+#one,#two,#three,#four,#five,#six{
+    font-family:arial;
+	letter-spacing:5px;
+    
+}
+
+#success{
+    clear:both;
+    color:black;
+    background-color:#778899;
+    text-align:center;
+    border-radius:5px;
+    padding:20px;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+    font-family:arial;
+	letter-spacing:5px;
+}
+
+#nav{
+	width:875;
+	text-align:center;
+	font-family:arial;
+	letter-spacing:12px;
+    color:#40B3DF;
+}
+
+#cat{
+    background-image: url(dark_cat_view-wide.jpg);    
+}
+
+h4{
+    font-size:16px;
+    letter-spacing:4px;
+    background:white;
+    opacity:0.6;
+    filter:alpha(opacity=60);
+    border-radius:5px;
+    
 }

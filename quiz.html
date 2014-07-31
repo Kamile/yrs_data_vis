@@ -2,7 +2,7 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="style.css">
-        <script type="text/javascript">           
+        <script type="text/javascript"> 
             
             var populationByCountry = [
                 ["India", 1300000000],
@@ -12,31 +12,42 @@
                 ["Togo",6800000]               
             ];
             
-            var inputID = ["one", "two", "three", "four", "five", "six"];
+            var buttonsIDs = ["one","two","three","four","five","six"];
             
-            function extraAnswers(i){
-                population = populationByCountry[i][1];
+            function extraAnswers(i){ //where i is the button id
+                var population = populationByCountry[0][1];
+                alert(population);
                 
-                answer = Math.floor((Math.random() *(population*1.5))+(population*0.5));
-                answer = answer.toPrecision(2);
-                if (answer != population){
-                    return answer                
+                var answer = Math.floor(Math.Random()*(population*1.5)+population*0.5);
+                if (i=="three"){
+                    document.getElementById(i).value = population;
+                }
+                else if (answer != population){
+                    document.getElementById(i).value = answer;                
                 }
                 else {
                     extraAnswers(i);   
-                }
+                };
             
-            }
+            };
             
-            for (var i=0; i<6; i++){
-                document.getElementById(inputID[i]).value = extraAnswers(0);
-            }
+            
+            function load(){
+                for(var i=0;i<6;i++){
+                    extraAnswers(buttonsIDs[i]);
+                };        
+            };
+            
+            
+            
+            
 
         </script>
 
     </head>
-    <body>
-        <h1>What is the population of India?</h1>        
+    <body onload="load()">
+        <h1>What is the population of India?</h1>
+        <div id="answers">
         <table>
             <tr>
                 <td>
@@ -50,7 +61,8 @@
                     <input type= "button" id="six"> </input> <br>
                 </td>
             </tr>
-        </table>  
+        </table>
+        </div>
     </body>
 </html>
                
