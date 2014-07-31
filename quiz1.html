@@ -5,45 +5,59 @@
         <script type="text/javascript"> 
             
             var populationByCountry = [
-                ["India", 1250000000],
-                ["Bermuda",65300],
-                ["Lithuania",3020000],
-                ["Micronesia",104000],
-                ["Togo",6820000],
-				["Malawi",16400000],
-				["Thailand",67000000],
-				["USA",320000000],
-				["Australia",23300000],
+                ["India", 1252139596],
+                ["Bermuda",65341],
+                ["Lithuania",3016933],
+                ["Micronesia",103549],
+                ["Togo",6816982],
+				["Malawi",16362567],
+				["Thailand",67010502],
+				["USA",320050716],
+				["Australia",23342553],
 				["Holy See",799],
-				["Faroe Islands",49500],
-				["United Kingdom",63100000]
+				["Faroe Islands",49469],
+				["United Kingdom",63136265],
+				["Macedonia",2107158],
+				["Liechtenstein",36925],
+				["San Marino",31448],
+				["Tuvalu",9876],
+				["Vanuatu",252763],
+				["Canada",35181704],
+				["Ethiopia",94100756],
+				["Angola",21471618],
+				["Lesotho",2074465],
+				["Cambodia",15135169]
 				
             ];
             
+			
+			
+			
+			
             var buttonsIDs = ["one","two","three","four","five","six"];
 			
 			var answerPlace = Math.floor(Math.random()*6);
 			var answerID = buttonsIDs[answerPlace];
 			
-			var questionNumber = Math.floor(Math.random()*12); //random number between 1 and 15
+			var questionNumber = Math.floor(Math.random()*13); //random number between 1 and 15
 			
-            
+			
             function extraAnswers(i){ //where i is the button id
                 var population = populationByCountry[questionNumber][1];
                 
                 
                 var answer = Math.floor(Math.random()*(population*1.2)+(population*0.8));
 				answer = Number(answer.toPrecision(3));
-				answer.toLocaleString();
+				
 				
 				population = Number(population.toPrecision(3));
-				population.toLocaleString();
+				
 				
                 if (i==answerID){
-                    document.getElementById(i).value = population;
+                    document.getElementById(i).value = population.toLocaleString();
                 }
                 else if (answer != population){
-                    document.getElementById(i).value = answer;                
+                    document.getElementById(i).value = answer.toLocaleString();                
                 }
                 else {
                     extraAnswers(i);   //call the function again so not same as answer
@@ -63,8 +77,10 @@
             };
 			
 			function answer(n){ //n is for button number
+			
+				var population = Number(populationByCountry[questionNumber][1].toPrecision(3));
 				if (n!=answerPlace){
-					alert("The correct answer was " + populationByCountry[questionNumber][1] + " for " + populationByCountry[questionNumber][0]);
+					alert("The correct answer was " + population + " for " + populationByCountry[questionNumber][0]);
 				} 
 				else{
 					alert("Woop! That was correct!!!");
