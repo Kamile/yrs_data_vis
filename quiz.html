@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script type="text/javascript">           
+            
+            var populationByCountry = [
+                ["India", 1300000000],
+                ["Bermuda",65000],
+                ["Lithuania",3000000],
+                ["Micronesia",100000],
+                ["Togo",6800000]               
+            ];
+            
+            var inputID = ["one", "two", "three", "four", "five", "six"];
+            
+            function extraAnswers(i){
+                population = populationByCountry[i][1];
+                
+                answer = Math.floor((Math.random() *(population*1.5))+(population*0.5));
+                answer = answer.toPrecision(2);
+                if (answer != population){
+                    return answer                
+                }
+                else {
+                    extraAnswers(i);   
+                }
+            
+            }
+            
+            for (var i=0; i<6; i++){
+                document.getElementById(inputID[i]).value = extraAnswers(0);
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <h1>What is the population of India?</h1>        
+        <table>
+            <tr>
+                <td>
+                    <input type= "button" id="one"> </input><br>
+                    <input type= "button" id="two"> </input><br>
+                    <a href= "quiz.html" id="three"> <input type= "button"> </input></a> 
+                </td>
+                <td>
+                    <input type= "button" id="four"> </input> <br>
+                    <input type= "button" id="five"> </input> <br>
+                    <input type= "button" id="six"> </input> <br>
+                </td>
+            </tr>
+        </table>  
+    </body>
+</html>
+               
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</html>

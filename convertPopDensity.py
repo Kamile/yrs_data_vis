@@ -1,9 +1,9 @@
-"""convert CSV to JSON  - of a table made up of continents->regions->countries
-Kamile Matulenaite 28.07.14
+"""convert CSV to JSON  - of a table made up of continents->countries
+Kamile Matulenaite 30.07.14
 data from geohi& world bank
-ps you could add mentions of these countries on twitter in real-time :-))
-
-"""
+create
+ json file for population density
+ """
 
 import json
 
@@ -36,25 +36,18 @@ def convert(f):
                  continentsObj = {}
                  Countries = []
 
-
-
-             """if (Countries != {}): #the first line is a continent and so countries is empty
-                 if continent =="":
-                     continent = currentLine[0]
-                     
-                 continentsObj["name"] = continent
-                 continentsObj["children"] = Countries
-
-                
-                 Continents.append(continentsObj)
-
-                 continentsObj = {}"""
                  
              continent = currentLine[0]
         
         else:
             country["name"] = currentLine[0]
-            country["size"] = int(currentLine[1])
+
+            population = float(currentLine[1])
+            area = float(currentLine[2])
+            density = population/area
+
+            
+            country["size"] = density
 
             Countries.append(country)
             #print(country)
@@ -87,7 +80,7 @@ f.close()
 
 data = convert(contents)
 
-f = open("flare.json","w")
+f = open("flare2.json","w")
 f.write(data)
 f.close()
 
