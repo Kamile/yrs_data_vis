@@ -21,36 +21,12 @@
 
 <script type="text/javascript" src="d3.v3.min.js"></script>
 <script>
-      
-   function colours(continent){
-      
-      if (continent == "Africa") {
-        return "rgb(209,198,37)";
-      }
-      else if (continent =="Asia") {
-        return "rgb(195,219,121)";
-      }
-      else if (continent == "Europe") {
-        return "rgb(116,176,178)";
-      }
-      else if (continent == "Latin America and Caribbean") {
-        return "rgb(249,255,139)";
-      }
-      else if (continent =="Northern America") {
-        return "rgb(220,189,177)";
-      }
-      else {
-        return "rgb(242,223,202)";
-      };
-  
-  }; 
     
 
 var diameter = 1400,
     format = d3.format(",d"),
     data = d3.range(0,20),
     color = d3.scale.category10();
-    //color = colours("Asia");
     
 
 var bubble = d3.layout.pack()
@@ -76,9 +52,16 @@ d3.json("flare2.json", function(error, root) {
       +"\nThis country is a part of "+ d.packageName; });
 
   node.append("circle")
-      
       .attr("r", function(d) { return d.r; })
-      .style("fill",  function(d){return color(d.packageName);});
+      .style("fill",  function(d){return color(d.packageName);})
+      .on('click',function(){
+          d3.select(this).attr("r",100);
+          d3.select(this).style("font-size","18px");
+          
+      })
+      .on('mouseout',function(){
+          d3.select(this).attr("r",function(d){return d.r;});
+      });
 
   node.append("text")
       .attr("textLength",function(d){return d.r})

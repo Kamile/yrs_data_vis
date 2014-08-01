@@ -4,9 +4,13 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 .node :hover{
-    opacity:0.8;
+    font-size:18px;
 
 }
+
+
+
+
 h1{
     background:white;
     text-align:center;
