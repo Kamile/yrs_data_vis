@@ -23,6 +23,12 @@
 <script>
     
 
+function clickcircle(){
+    d3.select(this).select("circle").attr("r",100);
+    d3.select(this).select("text").style("font-size","18px");
+};    
+    
+    
 var diameter = 1400,
     format = d3.format(",d"),
     data = d3.range(0,20),
@@ -56,20 +62,28 @@ d3.json("flare2.json", function(error, root) {
       .style("fill",  function(d){return color(d.packageName);})
       .on('click',function(){
           d3.select(this).attr("r",100);
-          d3.select(this).style("font-size","18px");
+          d3.select(this).select("text").style("font-size","18px");
           
       })
       .on('mouseout',function(){
           d3.select(this).attr("r",function(d){return d.r;});
+          d3.select(node.text).style("font-size",function(d){return (((d.r-50)/10)+8)+"px";});
       });
 
   node.append("text")
       .attr("textLength",function(d){return d.r})
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
-      .style("font-size", function(d){return (((d.r-50)/10)+8)+"px"})
+      .style("font-size", function(d){return (((d.r-50)/10)+8)+"px";})
       .style("font-weight","bold")
-      .text(function(d) { return d.className; });
+      .text(function(d) { return d.className; })
+      .on('click',function(){
+          d3.select(this).style("font-size","18px");
+          
+      })
+      .on('mouseout',function(){
+          d3.select(this).style("font-size",function(d){return (((d.r-50)/10)+8)+"px";});
+      });
 });
 
 // Returns a flattened hierarchy containing all leaf nodes under the root.
